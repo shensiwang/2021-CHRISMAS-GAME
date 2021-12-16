@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6486182c28ad08147a2c593beb7549d5, type: 3}
+  m_Name: New Main Tree Data Base
+  m_EditorClassIdentifier: 
+  mainTree:
+  - mainTreeName: RED
+    mainTreeIndex: 0
+    mainTreePrefab: {fileID: 2554156227142761323, guid: 46900bbdd95e50e4da17079b462d2c20, type: 3}
+  - mainTreeName: PINK
+    mainTreeIndex: 1
+    mainTreePrefab: {fileID: 4435952082236646921, guid: 90eeb32528b999048887b26dbc5b1545, type: 3}
+  - mainTreeName: GREEN
+    mainTreeIndex: 2
+    mainTreePrefab: {fileID: 3710651101257446947, guid: e2a4f9de7b7366244a03f71477748c3d, type: 3}
+  - mainTreeName: YELLOW
+    mainTreeIndex: 3
+    mainTreePrefab: {fileID: 7732820055206571016, guid: 7cc4f4b9231e0204ba2fc682e5db1ac9, type: 3}

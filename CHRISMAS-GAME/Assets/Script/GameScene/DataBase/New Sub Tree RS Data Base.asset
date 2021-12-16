@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48ede8f12c2906c49aa57dbddc0cca9e, type: 3}
+  m_Name: New Sub Tree RS Data Base
+  m_EditorClassIdentifier: 
+  subTreeRS:
+  - subTreeRSName: FOREST
+    subTreeRSIndex: 0
+    subTreeRSPrefab: {fileID: 1266549750288506949, guid: 0ff9002da5effe04eb71f1708dd8c1ac, type: 3}
+  - subTreeRSName: KELLY
+    subTreeRSIndex: 1
+    subTreeRSPrefab: {fileID: 5250004816742978711, guid: de95bc90469b44b4b9782bf357382b7b, type: 3}
+  - subTreeRSName: LIME
+    subTreeRSIndex: 2
+    subTreeRSPrefab: {fileID: 3274121561523740313, guid: 6a3f2a0e2ca295246bda218eab72e79b, type: 3}
+  - subTreeRSName: TUSCANY
+    subTreeRSIndex: 3
+    subTreeRSPrefab: {fileID: 5396757238735291000, guid: 8f9230822c31c81448d38728405dacdc, type: 3}
