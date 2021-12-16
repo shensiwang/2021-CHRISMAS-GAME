@@ -5,9 +5,9 @@ using UnityEngine;
 [CreateAssetMenu]
 public class MainTreeDataBase : ScriptableObject
 {
-    public MainTree[] mainTree;
+    public MainTree[] mainTree;//create an array, to store the maintree - properties
 
-    public int MainTreeCount
+    public int MainTreeCount //define - property, the length the array. 
     {
         get 
         {
@@ -17,7 +17,7 @@ public class MainTreeDataBase : ScriptableObject
 
     public MainTree GetMainTree(int index)
     {
-        return mainTree[index];
+        return mainTree[index]; //return a index, the sequence in an array
     }
 
 

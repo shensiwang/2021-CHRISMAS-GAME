@@ -14,7 +14,7 @@ public class MainTreeManager : MonoBehaviour
 
     public void NextOption()
     {
-        selectedOption++;
+        selectedOption++; //to display the gameobjects in an array
 
         if (selectedOption >= mainTreeDB.MainTreeCount)
         {
@@ -36,12 +36,12 @@ public class MainTreeManager : MonoBehaviour
         UpdateMainTree(selectedOption);
     }
 
-    private void UpdateMainTree(int selectedOption)
+    private void UpdateMainTree(int selectedOption)//int: tell which obejct to draw, which one in the array.
     {
-        MainTree mainTree = mainTreeDB.GetMainTree(selectedOption);
+        MainTree mainTree = mainTreeDB.GetMainTree(selectedOption);//给实例赋值
         //Selected artwork and set the prefeb active
         int temp = mainTree.mainTreeIndex;
-        PlayerManager.m_player.NotifyObservers("MainTree_" + temp);
+        PlayerManager.m_player.NotifyObservers("MainTree_" + temp);//在parameter里面加一个string，告诉obeserver应该做什么事情
         nameText.text = mainTree.mainTreeName;
     }
 }
