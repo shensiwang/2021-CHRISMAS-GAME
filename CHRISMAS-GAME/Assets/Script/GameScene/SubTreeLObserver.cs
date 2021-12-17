@@ -18,7 +18,6 @@ public class SubTreeLObserver : MonoBehaviour, IObserver
 
     public void Notify(string aMsg)
     {
-        Debug.Log("SubTreeL_" + aMsg);
         switch (aMsg)
         {
             case "SubTreeL_-1":

@@ -18,7 +18,6 @@ public class MainTreeObserver : MonoBehaviour, IObserver
 
     public void Notify(string aMsg)
     {
-        Debug.Log("MainTree_" + aMsg);
         switch (aMsg)
         {
             case "MainTree_-1":

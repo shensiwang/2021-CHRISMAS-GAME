@@ -10,7 +10,16 @@ public class SubTreeRBManager : MonoBehaviour
     public TextMeshProUGUI nameText;
 
     private int selectedOption = -1;
+    private string aMsg;
 
+
+    //private void Start()
+    //{
+    //    if (!PlayerPrefs.HasKey("subTreeRB_selectedOption")) { selectedOption = -1; }
+    //    else { Load(); }
+
+    //    UpdateSubTreeRB(selectedOption);
+    //}
 
     public void NextOption()
     {
@@ -39,9 +48,26 @@ public class SubTreeRBManager : MonoBehaviour
     private void UpdateSubTreeRB(int selectedOption)
     {
         SubTreeRB subTreeRB = subTreeRBDB.GetSubTreeRB(selectedOption);
-        //Selected artwork and set the prefeb active
-        int temp = subTreeRB.subTreeRBIndex;
-        PlayerManager.m_player.NotifyObservers("SubTreeRB_" + temp);
+        aMsg = "SubTreeRB_" + subTreeRB.subTreeRBIndex;
+        PlayerManager.m_player.NotifyObservers(aMsg);
         nameText.text = subTreeRB.subTreeRBName;
+    }
+
+    public void Load()
+    {
+        selectedOption = PlayerPrefs.GetInt("subTreeRB_selectedOption");
+        aMsg = PlayerPrefs.GetString("subTreeRB_aMsg");
+    }
+
+    public void Save()
+    {
+        PlayerPrefs.SetInt("subTreeRB_selectedOption", selectedOption);
+        PlayerPrefs.SetString("subTreeRB_aMsg", aMsg);
+    }
+
+    public void Clean()
+    {
+        PlayerPrefs.DeleteKey("subTreeRB_selectedOption");
+        PlayerPrefs.DeleteKey("subTreeRB_aMsg");
     }
 }

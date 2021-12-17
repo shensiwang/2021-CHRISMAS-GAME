@@ -10,7 +10,16 @@ public class SubTreeLManager : MonoBehaviour
     public TextMeshProUGUI nameText;
 
     private int selectedOption = -1;
+    private string aMsg;
 
+
+    //private void Start()
+    //{
+    //    if (!PlayerPrefs.HasKey("subTreeL_selectedOption")) { selectedOption = -1; }
+    //    else { Load(); }
+
+    //    UpdatesubTreeL(selectedOption);
+    //}
 
     public void NextOption()
     {
@@ -39,8 +48,26 @@ public class SubTreeLManager : MonoBehaviour
     private void UpdatesubTreeL(int selectedOption)
     {
         SubTreeL subTreeL = subTreeLDB.GetSubTreeL(selectedOption);
-        int temp = subTreeL.subTreeLIndex;
-        PlayerManager.m_player.NotifyObservers("SubTreeL_" + temp);
+        aMsg = "SubTreeL_" + subTreeL.subTreeLIndex;
+        PlayerManager.m_player.NotifyObservers(aMsg);
         nameText.text = subTreeL.subTreeLName;
+    }
+
+    public void Load()
+    {
+        selectedOption = PlayerPrefs.GetInt("subTreeL_selectedOption");
+        aMsg = PlayerPrefs.GetString("subTreeL_aMsg");
+    }
+
+    public void Save()
+    {
+        PlayerPrefs.SetInt("subTreeL_selectedOption", selectedOption);
+        PlayerPrefs.SetString("subTreeL_aMsg", aMsg);
+    }
+
+    public void Clean()
+    {
+        PlayerPrefs.DeleteKey("subTreeL_selectedOption");
+        PlayerPrefs.DeleteKey("subTreeL_aMsg");
     }
 }

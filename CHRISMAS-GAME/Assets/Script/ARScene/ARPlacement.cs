@@ -6,8 +6,8 @@ using UnityEngine.XR.ARSubsystems;
 
 public class ARPlacement : MonoBehaviour
 {
-    public GameObject arObjectToSpawn;
-    public GameObject placementIndicator;
+    public GameObject arObjectToSpawn;     // spawn this prefab in the placement position 
+    public GameObject placementIndicator;  // spawn an indicaorUI to allocate the prefab
 
     private GameObject spawnedObject;
     private Pose PlacementPose;
@@ -29,6 +29,7 @@ public class ARPlacement : MonoBehaviour
         UpdatePlacementPose();
     }
 
+    // update indicator ui sprite & position
     void UpdatePlacementIndicator()
     {
         if (spawnedObject == null && placementPoseIsValid)
@@ -42,13 +43,13 @@ public class ARPlacement : MonoBehaviour
         }
     }
     
+    // check if is valid to place ar gameobject
     void UpdatePlacementPose()
     {
         var screenCenter = Camera.current.ViewportToScreenPoint(new Vector3(0.5f, 0.5f));
         var hits = new List<ARRaycastHit>();
         aRRaycastManager.Raycast(screenCenter, hits, TrackableType.Planes);
 
-        //set the ARObject position
         placementPoseIsValid = hits.Count > 0;
         if (placementPoseIsValid)
         {
